@@ -9,7 +9,7 @@ const findLastId = async () => {
 
 export const generateUserID = async () => {
   const lastId = await findLastId();
-  const nextID = Number(lastId) + 1;
-  const paddedID = `${nextID}`.padStart(6, '0') || '000000';
+  const nextID = lastId ? Number(lastId) + 1 : 1;
+  const paddedID = `${nextID}`.padStart(6, '0');
   return paddedID;
 };
