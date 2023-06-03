@@ -1,0 +1,76 @@
+{"level":"info","message":"Connect successfully!!!"}
+{"level":"info","message":"Server is listening on port 5000"}
+{"level":"error","message":"Connect failure!!!"}
+{"level":"info","message":"Connect successfully!!!"}
+{"level":"info","message":"Server is listening on port 5000"}
+{"level":"info","message":"Connect successfully!!!"}
+{"level":"info","message":"Server is listening on port 5000"}
+2023-06-03T02:04:52.308Z [right meow!] info: Connect successfully!!!
+2023-06-03T02:04:52.345Z [right meow!] info: Server is listening on port 5000
+2023-06-03T02:05:26.400Z [INFO] info: Connect successfully!!!
+2023-06-03T02:05:26.437Z [INFO] info: Server is listening on port 5000
+2023-06-03T02:07:24.671Z [INFO] info: Connect successfully!!!
+2023-06-03T02:07:24.684Z [INFO] info: Server is listening on port 5000
+{
+  message: 'Connect successfully!!!',
+  level: 'info',
+  label: 'INFO',
+  timestamp: '2023-06-03T02:07:36.452Z'
+}
+{
+  message: 'Server is listening on port 5000',
+  level: 'info',
+  label: 'INFO',
+  timestamp: '2023-06-03T02:07:36.485Z'
+}
+{
+  message: 'Connect successfully!!!',
+  level: 'info',
+  label: 'INFO',
+  timestamp: '2023-06-03T02:08:12.402Z'
+}
+{
+  message: 'Server is listening on port 5000',
+  level: 'info',
+  label: 'INFO',
+  timestamp: '2023-06-03T02:08:12.632Z'
+}
+{
+  message: 'Connect successfully!!!',
+  level: 'info',
+  label: 'INFO',
+  timestamp: '2023-06-03T02:08:22.814Z'
+}
+{
+  message: 'Server is listening on port 5000',
+  level: 'info',
+  label: 'INFO',
+  timestamp: '2023-06-03T02:08:22.849Z'
+}
+{
+  message: 'Connect successfully!!!',
+  level: 'info',
+  label: 'INFO',
+  timestamp: '2023-06-03T02:08:27.337Z'
+}
+{
+  message: 'Server is listening on port 5000',
+  level: 'info',
+  label: 'INFO',
+  timestamp: '2023-06-03T02:08:27.455Z'
+}
+2023-06-03T02:09:01.846Z [INFO] info: Connect successfully!!! : 6/3/2023
+2023-06-03T02:09:01.928Z [INFO] info: Server is listening on port 5000 : 6/3/2023
+2023-06-03T02:09:40.959Z [INFO] info: Connect successfully!!! : undefined
+2023-06-03T02:09:40.969Z [INFO] info: Server is listening on port 5000 : undefined
+2023-06-03T02:09:48.034Z [INFO] info: Connect successfully!!! : Sat Jun 03 2023
+2023-06-03T02:09:48.085Z [INFO] info: Server is listening on port 5000 : Sat Jun 03 2023
+2023-06-03T03:34:18.977Z [INFO] info: Connect successfully!!! : Sat Jun 03 2023
+2023-06-03T03:34:18.987Z [INFO] info: Server is listening on port 5000 : Sat Jun 03 2023
+2023-06-03T03:36:14.597Z [INFO] error: Connect failure!!! : Sat Jun 03 2023
+2023-06-03T03:36:20.570Z [INFO] info: Connect successfully!!! : Sat Jun 03 2023
+2023-06-03T03:36:20.590Z [INFO] info: Server is listening on port 5000 : Sat Jun 03 2023
+2023-06-03T03:37:54.181Z [INFO] info: Connect successfully!!! : Sat Jun 03 2023
+2023-06-03T03:37:54.197Z [INFO] info: Server is listening on port 5000 : Sat Jun 03 2023
+2023-06-03T03:38:01.926Z [INFO] info: Connect successfully!!! : Sat Jun 03 2023
+2023-06-03T03:38:01.933Z [INFO] info: Server is listening on port 5000 : Sat Jun 03 2023
