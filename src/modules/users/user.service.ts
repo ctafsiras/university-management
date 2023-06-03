@@ -5,10 +5,10 @@ import { generateUserID } from './user.utils';
 
 const createUser = async (user: IUser): Promise<IUser | null> => {
   //auto increment id
-  user.id =await generateUserID();
+  user.id = await generateUserID();
   //default student password
   if (!user.password) {
-    user.password = config.defaultStudentPassword as string;
+    user.password = config.defaultUserPassword as string;
   }
 
   const newUser = await User.create(user);
