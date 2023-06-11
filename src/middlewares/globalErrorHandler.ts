@@ -1,22 +1,39 @@
-import { NextFunction, Request, Response } from 'express';
+import { ErrorRequestHandler, NextFunction, Request, Response } from 'express';
+import { ZodError } from 'zod';
 import config from '../config';
+import ApiError from '../errors/ApiError';
 import handleValidationError from '../errors/handleValidationError';
+import handleZodError from '../errors/zodErrorHandler';
 import GenericErrorMessage from '../interfaces/error';
-const globalErrorHandler = (
-  err: any,
+import logger from '../shared/logger';
+const globalErrorHandler: ErrorRequestHandler = (
+  err,
   req: Request,
   res: Response,
   next: NextFunction,
 ) => {
-  let message = '';
-  let statusCode = 500;
-  let errorMessages: GenericErrorMessage[] = [];
+  // eslint-disable-next-line no-unused-expressions
+  config.env === 'development'
+    ? console.log('🚀 globalErrorHandler ', err)
+    : logger.error('🚀 globalErrorHandler ', err);
 
+  let message = '';
+  let statusCode = 400;
+  let errorMessages: GenericErrorMessage[] = [];
   if (err.name === 'ValidationError') {
     const simplifiedError = handleValidationError(err);
     statusCode = simplifiedError.statusCode;
     message = simplifiedError.message;
     errorMessages = simplifiedError.errorMessages;
+  } else if (err instanceof ZodError) {
+    const simplifiedError = handleZodError(err);
+    statusCode = simplifiedError.statusCode;
+    message = simplifiedError.message;
+    errorMessages = simplifiedError.errorMessages;
+  } else if (err instanceof ApiError) {
+    statusCode = err.statusCode;
+    message = err.message;
+    errorMessages = [{ message: err.message, path: '' }];
   } else if (err instanceof Error) {
     message = err.message;
     errorMessages = [{ message: err.message, path: '' }];

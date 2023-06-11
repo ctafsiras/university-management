@@ -1,5 +1,5 @@
 type GenericErrorMessage = {
   message: string;
-  path: string;
+  path: string | number;
 };
 export default GenericErrorMessage;
