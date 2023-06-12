@@ -9,9 +9,12 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api/v1', router);
 
-// app.get('/', async (req: Request, res: Response, next: NextFunction) => {
-//   // Promise.reject(new Error('Something went wrong'));
-
+// app.get('/', async (req, res, next) => {
+//   try {
+//     throw new Error('Not Test');
+//   } catch (error) {
+//     throw new Error('Not Test');
+//   }
 // });
 app.use(globalErrorHandler);
 app.use((req, res, next) => {

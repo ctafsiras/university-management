@@ -23,4 +23,15 @@ const academicSemesterTitileCodeMapper = {
   Fall: '03',
 };
 
-export { months, code, title, academicSemesterTitileCodeMapper };
+const paginationOptionList = ['page', 'limit', 'sortBy', 'sortOrder'];
+
+const academicSemesterFilterList = ['year', 'code', 'title'];
+
+export {
+  academicSemesterFilterList,
+  academicSemesterTitileCodeMapper,
+  code,
+  months,
+  paginationOptionList,
+  title,
+};

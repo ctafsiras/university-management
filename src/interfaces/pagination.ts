@@ -5,7 +5,10 @@ interface IPagination {
   sortOrder?: 'asc' | 'desc';
 }
 interface IFilters {
-  searchTerm: string;
+  searchTerm?: string;
+  code?: string;
+  title?: string;
+  year?: string;
 }
 
-export { IPagination, IFilters };
+export { IFilters, IPagination };

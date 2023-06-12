@@ -16,7 +16,7 @@ export type Code = '01' | '02' | '03';
 export type Title = 'Autumn' | 'Summer' | 'Fall';
 interface IAcademicSemester {
   title: Title;
-  year: number;
+  year: string;
   code: Code;
   startMonth: Month;
   endMonth: Month;
@@ -24,4 +24,13 @@ interface IAcademicSemester {
 
 type AcademicSemesterModel = Model<IAcademicSemester>;
 
-export { IAcademicSemester, AcademicSemesterModel };
+interface IGenericResponse<IAcademicSemester> {
+  meta: {
+    page: number;
+    limit: number;
+    total: number;
+  };
+  data: IAcademicSemester[];
+}
+
+export { AcademicSemesterModel, IAcademicSemester, IGenericResponse };
