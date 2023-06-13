@@ -6,9 +6,15 @@ const router = express.Router();
 
 router.get('/', AcademicSemesterController.getAcademicSemesters);
 router.get('/:id', AcademicSemesterController.getSingleAcademicSemester);
+router.delete('/:id', AcademicSemesterController.deleteSingleAcademicSemester);
+router.patch(
+  '/:id',
+  validateRequest(AcademicSemesterValidation.updateAcademicSemesterJodSchema),
+  AcademicSemesterController.updateSingleAcademicSemester,
+);
 router.post(
   '/create-academic-semester',
-  validateRequest(AcademicSemesterValidation.academicSemesterJodSchema),
+  validateRequest(AcademicSemesterValidation.createAcademicSemesterJodSchema),
   AcademicSemesterController.createAcademicSemester,
 );
 

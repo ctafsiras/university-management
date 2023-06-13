@@ -72,9 +72,36 @@ const getSingleAcademicSemester = async (
   const result = await AcademicSemester.findById(id);
   return result;
 };
+const updateSingleAcademicSemester = async (
+  id: string,
+  updatedData: Partial<IAcademicSemester>,
+): Promise<IAcademicSemester | null> => {
+  if (
+    updatedData.title &&
+    updatedData.code &&
+    academicSemesterTitileCodeMapper[updatedData.title] !== updatedData.code
+  ) {
+    throw new ApiError(400, 'Code and title does not match');
+  }
+  const result = await AcademicSemester.findOneAndUpdate(
+    { _id: id },
+    updatedData,
+    { new: true },
+  );
+  return result;
+};
+
+const deleteSingleAcademicSemester = async (
+  id: string,
+): Promise<IAcademicSemester | null> => {
+  const result = await AcademicSemester.findByIdAndDelete({ _id: id });
+  return result;
+};
 
 export const AcademicSemesterService = {
   createAcademicSemester,
   getAcademicSemesters,
   getSingleAcademicSemester,
+  updateSingleAcademicSemester,
+  deleteSingleAcademicSemester,
 };

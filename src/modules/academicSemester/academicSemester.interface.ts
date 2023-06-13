@@ -24,13 +24,4 @@ interface IAcademicSemester {
 
 type AcademicSemesterModel = Model<IAcademicSemester>;
 
-interface IGenericResponse<IAcademicSemester> {
-  meta: {
-    page: number;
-    limit: number;
-    total: number;
-  };
-  data: IAcademicSemester[];
-}
-
-export { AcademicSemesterModel, IAcademicSemester, IGenericResponse };
+export { AcademicSemesterModel, IAcademicSemester };

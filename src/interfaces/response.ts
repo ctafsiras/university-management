@@ -7,4 +7,13 @@ type ErrorResponse = {
   stack?: string;
 };
 
-export default ErrorResponse;
+interface IGenericResponse<IAcademicSemester> {
+  meta: {
+    page: number;
+    limit: number;
+    total: number;
+  };
+  data: IAcademicSemester[];
+}
+
+export { ErrorResponse, IGenericResponse };

@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import GenericErrorMessage from '../interfaces/error';
-import ErrorResponse from '../interfaces/response';
+import { ErrorResponse } from '../interfaces/response';
 
 const handleCastError = (err: mongoose.Error.CastError): ErrorResponse => {
   const errorMessages: GenericErrorMessage[] = [
