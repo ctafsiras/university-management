@@ -1,6 +1,7 @@
 import { Schema, model } from 'mongoose';
+import { IStudent, StudentModel } from './student.interface';
 
-const studentSchema = new Schema(
+export const studentSchema = new Schema(
   {
     id: {
       type: String,
@@ -98,17 +99,17 @@ const studentSchema = new Schema(
       },
     },
     academicSemester: {
-      type: String,
+      type: Schema.Types.ObjectId,
       required: true,
       ref: 'AcademicSemester',
     },
     academicDepartment: {
-      type: String,
+      type: Schema.Types.ObjectId,
       required: true,
       ref: 'AcademicDepartment',
     },
     academicFaculty: {
-      type: String,
+      type: Schema.Types.ObjectId,
       required: true,
       ref: 'AcademicFaculty',
     },
@@ -121,4 +122,4 @@ const studentSchema = new Schema(
   },
 );
 
-export const Student = model('Student', studentSchema);
+export const Student = model<IStudent, StudentModel>('Student', studentSchema);

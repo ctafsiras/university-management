@@ -1,14 +1,12 @@
 import ApiError from '../../errors/ApiError';
 import paginationCalculation from '../../helpers/paginationHelper';
 import { IFilters, IPagination } from '../../interfaces/pagination';
+import { IGenericResponse } from '../../interfaces/response';
 import {
   academicSemesterFilterList,
   academicSemesterTitileCodeMapper,
 } from './academicSemester.constant';
-import {
-  IAcademicSemester,
-  IGenericResponse,
-} from './academicSemester.interface';
+import { IAcademicSemester } from './academicSemester.interface';
 import { AcademicSemester } from './academicSemester.model';
 
 const createAcademicSemester = async (
