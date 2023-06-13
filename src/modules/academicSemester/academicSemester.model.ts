@@ -33,7 +33,7 @@ const academicSemesterShema = new Schema<IAcademicSemester>(
       enum: months,
     },
   },
-  { timestamps: true },
+  { timestamps: true, toJSON: { virtuals: true } },
 );
 
 // academicSemesterShema.index({ title: 1, year: 1 }, { unique: true });
