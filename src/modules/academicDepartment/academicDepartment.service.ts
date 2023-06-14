@@ -9,7 +9,7 @@ const createAcademicDepartment = async (
   academicDepartment: IAcademicDepartment,
 ): Promise<IAcademicDepartment> => {
   const result = (await AcademicDepartment.create(academicDepartment)).populate(
-    'AcademicFaculty',
+    'academicFaculty',
   );
   return result;
 };
@@ -45,7 +45,7 @@ const getAcademicDepartment = async (
     .sort({ [sortBy]: sortOrder })
     .skip(skip)
     .limit(limit);
-  const total = await AcademicDepartment.countDocuments();
+  const total = await AcademicDepartment.countDocuments(whereCondition);
   return {
     meta: {
       page,

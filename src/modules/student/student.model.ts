@@ -1,11 +1,12 @@
 import { Schema, model } from 'mongoose';
 import { IStudent, StudentModel } from './student.interface';
 
-export const studentSchema = new Schema(
+const studentSchema = new Schema<IStudent>(
   {
     id: {
       type: String,
       required: true,
+      unique: true,
     },
     name: {
       firstName: {
@@ -32,10 +33,12 @@ export const studentSchema = new Schema(
     email: {
       type: String,
       required: true,
+      unique: true,
     },
     contactNo: {
       type: String,
       required: true,
+      unique: true,
     },
     presentAddress: {
       type: String,
@@ -47,8 +50,10 @@ export const studentSchema = new Schema(
     },
     bloodGroup: {
       type: String,
-      required: true,
-      enum: ['A+', 'A-'],
+      enum: ['A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-'],
+    },
+    profileImage: {
+      type: String,
     },
     guardian: {
       fatherName: {

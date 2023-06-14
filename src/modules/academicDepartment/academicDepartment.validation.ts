@@ -6,7 +6,7 @@ const createAcademicDepartmentJodSchema = z.object({
       required_error: 'title is required',
     }),
     academicFaculty: z.string({
-      required_error: 'academicDepartment is required',
+      required_error: 'academicFaculty is required',
     }),
   }),
 });

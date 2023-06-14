@@ -9,14 +9,14 @@ const findLastStudentId = async () => {
 };
 
 export const generateStudentId = async (
-  academicSemester: Partial<IAcademicSemester>,
+  academicSemester: IAcademicSemester | null,
 ) => {
   const lastId = await findLastStudentId();
   const nextID = lastId ? Number(lastId) + 1 : 1;
   const paddedID = `${nextID}`.padStart(5, '0');
-  const studentId = `${
-    academicSemester.year && academicSemester.year.substring(2)
-  }${academicSemester.code}${paddedID}`;
+  const studentId = `${academicSemester?.year.substring(2)}${
+    academicSemester?.code
+  }${paddedID}`;
   return studentId;
 };
 
