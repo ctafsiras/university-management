@@ -89,7 +89,6 @@ const updateSingleFaculty = async (
     });
   }
 
-  console.log(newData);
   const result = await Faculty.findOneAndUpdate({ id }, newData, {
     new: true,
   }).populate([

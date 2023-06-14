@@ -28,10 +28,7 @@ const createStudent = async (
     const id = await generateStudentId(academicSemister);
     user.id = id;
     student.id = id;
-    console.log('user', user);
-    console.log('student', student);
     const newStudent = await Student.create([student], { session });
-    console.log('new Student', newStudent);
     if (!newStudent.length) {
       throw new ApiError(400, 'Student cannot be created');
     }
@@ -39,12 +36,10 @@ const createStudent = async (
     user.student = newStudent[0]._id;
 
     const newUser = await User.create([user], { session });
-    console.log('40 user', user);
     if (!newUser.length) {
       throw new ApiError(400, 'User cannot be created');
     }
     newUserAllData = newUser[0];
-    console.log('44 new user', newUserAllData);
     await session.commitTransaction();
     await session.endSession();
   } catch (error) {
@@ -92,11 +87,7 @@ const createFaculty = async (
     if (!newFaculty.length) {
       throw new ApiError(400, 'Faculty cannot be created');
     }
-
     user.faculty = newFaculty[0]._id;
-    console.log('user', user);
-    console.log('faculty ', newFaculty[0]._id);
-
     const newUser = await User.create([user], { session });
     if (!newUser.length) {
       throw new ApiError(400, 'User cannot be created');

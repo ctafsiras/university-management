@@ -108,7 +108,6 @@ const updateSingleStudent = async (
     });
   }
 
-  console.log(newData);
   const result = await Student.findOneAndUpdate({ id }, newData, {
     new: true,
   }).populate([

@@ -32,6 +32,5 @@ export const generateFacultyId = async () => {
   const nextID = lastId ? Number(lastId) + 1 : 1;
   const paddedID = `${nextID}`.padStart(5, '0');
   const facultyId = `F-${paddedID}`;
-  console.log(facultyId);
   return facultyId;
 };
