@@ -5,7 +5,7 @@ import sendResponse from '../../shared/sendResponse';
 import { UserService } from './user.service';
 
 const createStudent: RequestHandler = catchAsync(
-  async (req: Request, res: Response, next) => {
+  async (req: Request, res: Response) => {
     const { student, ...userData } = req.body;
     const result = await UserService.createStudent(student, userData);
     sendResponse(res, {
@@ -14,9 +14,21 @@ const createStudent: RequestHandler = catchAsync(
       message: 'Student created successfully',
       data: result,
     });
-    next();
+  },
+);
+const createFaculty: RequestHandler = catchAsync(
+  async (req: Request, res: Response) => {
+    const { faculty, ...userData } = req.body;
+    const result = await UserService.createFaculty(faculty, userData);
+    sendResponse(res, {
+      status: 200,
+      success: true,
+      message: 'Faculty created successfully',
+      data: result,
+    });
   },
 );
 export const UserController = {
   createStudent,
+  createFaculty,
 };
