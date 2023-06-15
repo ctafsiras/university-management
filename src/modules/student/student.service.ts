@@ -39,13 +39,13 @@ const getAllStudent = async (
   const result = await Student.find(whereCondition)
     .populate([
       {
-        path: 'AcademicFaculty',
+        path: 'academicFaculty',
       },
       {
-        path: 'AcademicDepartment',
+        path: 'academicDepartment',
       },
       {
-        path: 'AcademicSemester',
+        path: 'academicSemester',
       },
     ])
     .sort({ [sortBy]: sortOrder })

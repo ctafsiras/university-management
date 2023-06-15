@@ -41,7 +41,7 @@ const getAcademicDepartment = async (
     paginationCalculation(paginationOptions);
   const whereCondition = andCondition.length ? { $and: andCondition } : {};
   const result = await AcademicDepartment.find(whereCondition)
-    .populate('AcademicFaculty')
+    .populate('academicFaculty')
     .sort({ [sortBy]: sortOrder })
     .skip(skip)
     .limit(limit);
@@ -60,7 +60,7 @@ const getSingleAcademicDepartment = async (
   id: string,
 ): Promise<IAcademicDepartment | null> => {
   const result = await AcademicDepartment.findById(id).populate(
-    'AcademicFaculty',
+    'academicFaculty',
   );
   return result;
 };
@@ -72,7 +72,7 @@ const updateSingleAcademicDepartment = async (
     { _id: id },
     updatedData,
     { new: true },
-  ).populate('AcademicFaculty');
+  ).populate('academicFaculty');
   return result;
 };
 
@@ -81,7 +81,7 @@ const deleteSingleAcademicDepartment = async (
 ): Promise<IAcademicDepartment | null> => {
   const result = await AcademicDepartment.findByIdAndDelete({
     _id: id,
-  }).populate('AcademicFaculty');
+  }).populate('academicFaculty');
   return result;
 };
 

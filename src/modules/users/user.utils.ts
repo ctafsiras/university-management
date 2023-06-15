@@ -34,3 +34,17 @@ export const generateFacultyId = async () => {
   const facultyId = `F-${paddedID}`;
   return facultyId;
 };
+const findLastAdminId = async () => {
+  const lastId = await User.findOne({ role: 'admin' }, { id: 1, _id: 0 })
+    .sort({ createdAt: -1 })
+    .lean();
+  return lastId?.id ? lastId.id.substring(2) : undefined;
+};
+
+export const generateAdminId = async () => {
+  const lastId = await findLastAdminId();
+  const nextID = lastId ? Number(lastId) + 1 : 1;
+  const paddedID = `${nextID}`.padStart(5, '0');
+  const adminId = `A-${paddedID}`;
+  return adminId;
+};
