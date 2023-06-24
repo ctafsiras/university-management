@@ -9,7 +9,7 @@ router.get('/:id', StudentController.getSingleStudent);
 router.delete('/:id', StudentController.deleteSingleStudent);
 router.patch(
   '/:id',
-  validateRequest(StudentValidation.updateStudentJodSchema),
+  validateRequest(StudentValidation.updateStudentZodSchema),
   StudentController.updateSingleStudent,
 );
 

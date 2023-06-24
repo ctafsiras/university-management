@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-const updateStudentJodSchema = z.object({
+const updateStudentZodSchema = z.object({
   body: z.object({
     name: z
       .object({
@@ -45,6 +45,6 @@ const updateStudentJodSchema = z.object({
 });
 
 export const StudentValidation = {
-  updateStudentJodSchema,
+  updateStudentZodSchema,
 };
-//   await createUserJodSchema.parseAsync(req);
+//   await createUserZodSchema.parseAsync(req);

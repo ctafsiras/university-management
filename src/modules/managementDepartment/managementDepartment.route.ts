@@ -7,7 +7,7 @@ const router = express.Router();
 router.post(
   '/create-management',
   validateRequest(
-    ManagementDepartmentValidation.createManagementDepartmentJodSchema,
+    ManagementDepartmentValidation.createManagementDepartmentZodSchema,
   ),
   ManagementDepartmentController.createManagementDepartment,
 );

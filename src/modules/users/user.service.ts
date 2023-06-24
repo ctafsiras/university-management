@@ -23,6 +23,7 @@ const createStudent = async (
   if (!user.password) {
     user.password = config.defaultStudentPassword as string;
   }
+
   user.role = 'student';
   const academicSemister = await AcademicSemester.findById(
     student.academicSemester,
@@ -80,6 +81,7 @@ const createFaculty = async (
   if (!user.password) {
     user.password = config.defaultFacultyPassword as string;
   }
+
   user.role = 'faculty';
 
   let newUserAllData = null;
@@ -128,6 +130,7 @@ const createAdmin = async (
   if (!user.password) {
     user.password = config.defaultAdminPassword as string;
   }
+
   user.role = 'admin';
 
   let newUserAllData = null;

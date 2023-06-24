@@ -6,17 +6,17 @@ const router = express.Router();
 
 router.post(
   '/create-student',
-  validateRequest(UserValidation.createUserJodSchema),
+  validateRequest(UserValidation.createUserZodSchema),
   UserController.createStudent,
 );
 router.post(
   '/create-faculty',
-  validateRequest(UserValidation.createFacultyJodSchema),
+  validateRequest(UserValidation.createFacultyZodSchema),
   UserController.createFaculty,
 );
 router.post(
   '/create-admin',
-  validateRequest(UserValidation.createAdminJodSchema),
+  validateRequest(UserValidation.createAdminZodSchema),
   UserController.createAdmin,
 );
 

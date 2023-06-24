@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-const updateAdminJodSchema = z.object({
+const updateAdminZodSchema = z.object({
   body: z.object({
     name: z
       .object({
@@ -26,6 +26,6 @@ const updateAdminJodSchema = z.object({
 });
 
 export const AdminValidation = {
-  updateAdminJodSchema,
+  updateAdminZodSchema,
 };
-//   await createUserJodSchema.parseAsync(req);
+//   await createUserZodSchema.parseAsync(req);

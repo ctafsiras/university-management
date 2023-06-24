@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import { code, months, title } from './academicSemester.constant';
 
-const createAcademicSemesterJodSchema = z.object({
+const createAcademicSemesterZodSchema = z.object({
   body: z.object({
     title: z.enum([...title] as [string, ...string[]], {
       required_error: 'title is required',
@@ -20,7 +20,7 @@ const createAcademicSemesterJodSchema = z.object({
     }),
   }),
 });
-const updateAcademicSemesterJodSchema = z
+const updateAcademicSemesterZodSchema = z
   .object({
     body: z.object({
       title: z
@@ -58,6 +58,6 @@ const updateAcademicSemesterJodSchema = z
   );
 
 export const AcademicSemesterValidation = {
-  createAcademicSemesterJodSchema,
-  updateAcademicSemesterJodSchema,
+  createAcademicSemesterZodSchema,
+  updateAcademicSemesterZodSchema,
 };

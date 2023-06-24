@@ -9,7 +9,7 @@ router.get('/:id', AdminController.getSingleAdmin);
 router.delete('/:id', AdminController.deleteSingleAdmin);
 router.patch(
   '/:id',
-  validateRequest(AdminValidation.updateAdminJodSchema),
+  validateRequest(AdminValidation.updateAdminZodSchema),
   AdminController.updateSingleAdmin,
 );
 

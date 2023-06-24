@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-const createUserJodSchema = z.object({
+const createUserZodSchema = z.object({
   body: z.object({
     password: z.string().optional(),
     student: z.object({
@@ -89,7 +89,7 @@ const createUserJodSchema = z.object({
   }),
 });
 
-const createFacultyJodSchema = z.object({
+const createFacultyZodSchema = z.object({
   body: z.object({
     password: z.string().optional(),
     faculty: z.object({
@@ -140,7 +140,7 @@ const createFacultyJodSchema = z.object({
   }),
 });
 
-const createAdminJodSchema = z.object({
+const createAdminZodSchema = z.object({
   body: z.object({
     password: z.string().optional(),
     admin: z.object({
@@ -189,8 +189,8 @@ const createAdminJodSchema = z.object({
 });
 
 export const UserValidation = {
-  createAdminJodSchema,
-  createUserJodSchema,
-  createFacultyJodSchema,
+  createAdminZodSchema,
+  createUserZodSchema,
+  createFacultyZodSchema,
 };
-//   await createUserJodSchema.parseAsync(req);
+//   await createUserZodSchema.parseAsync(req);

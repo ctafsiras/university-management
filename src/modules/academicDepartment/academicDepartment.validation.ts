@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-const createAcademicDepartmentJodSchema = z.object({
+const createAcademicDepartmentZodSchema = z.object({
   body: z.object({
     title: z.string({
       required_error: 'title is required',
@@ -12,5 +12,5 @@ const createAcademicDepartmentJodSchema = z.object({
 });
 
 export const AcademicDepartmentValidation = {
-  createAcademicDepartmentJodSchema,
+  createAcademicDepartmentZodSchema,
 };
