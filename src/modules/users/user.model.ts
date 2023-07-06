@@ -23,6 +23,9 @@ const userSchema = new Schema<IUser, UserModel>(
       type: Boolean,
       default: false,
     },
+    passwordChangedAt: {
+      type: Date,
+    },
     student: {
       type: Schema.Types.ObjectId,
       ref: 'Student',
@@ -47,7 +50,7 @@ userSchema.statics.isExist = async function (
 > | null> {
   return await User.findOne(
     { id },
-    { id: 1, password: 1, isPasswordChanged: 1 },
+    { id: 1, password: 1, isPasswordChanged: 1, role: 1 },
   );
 };
 userSchema.statics.isPasswordMatched = async function (
